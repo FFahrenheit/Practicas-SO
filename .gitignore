@@ -24,3 +24,10 @@ hs_err_pid*
 replay_pid*
 /PracticaHistograma/nbproject/private/
 /PracticaHistograma/build/
+/AnalizadorSintactico/nbproject/private/
+/Planificadores/nbproject/private/
+/Planificadores/dist/
+/Planificadores/build/
+/FCFS/nbproject/private/
+/FCFS/build/
+/FCFS/dist/
