@@ -1,2 +1,2 @@
 # Practicas-SO
- Praáticas para la materia de Sistemas Operativos
+ Prácticas para la materia de Sistemas Operativos

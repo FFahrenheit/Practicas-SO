@@ -16,7 +16,8 @@ import models.ThreadWork;
 public class RaceView extends javax.swing.JFrame {
     
     private Scheduler scheduler;
-    private int STEPS = 35;
+    private int STEPS = 100;
+    private int DELAY = 50;
     /**
      * Creates new form RaceView
      */
@@ -31,7 +32,7 @@ public class RaceView extends javax.swing.JFrame {
         this.scheduler = new Scheduler();
         
         for (int i = 0; i < processes.length; i++) {
-            ThreadWork work = new ThreadWork(STEPS, bars[i], processes[i], this.loggerArea);
+            ThreadWork work = new ThreadWork(STEPS, bars[i], processes[i], this.loggerArea, DELAY);
             scheduler.addJob(work);
         }
     }
@@ -96,7 +97,7 @@ public class RaceView extends javax.swing.JFrame {
         jLabel2.setText("Estado");
 
         jLabel3.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
-        jLabel3.setText("Windows 12");
+        jLabel3.setText("Windows 12 - FCFS");
 
         progressBar2.setForeground(new java.awt.Color(255, 102, 102));
 

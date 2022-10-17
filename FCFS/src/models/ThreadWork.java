@@ -14,16 +14,18 @@ import javax.swing.JTextArea;
  */
 public class ThreadWork implements Runnable{
     private final int totalSteps;
+    private final int delay;
     private final JProgressBar processGraphic;
     private final String processName; 
     private final JTextArea logger;
     
-    public ThreadWork(int steps, JProgressBar processGraphic, String processName, JTextArea logger){
+    public ThreadWork(int steps, JProgressBar processGraphic, String processName, JTextArea logger, int delay){
         this.totalSteps = steps;
         this.processGraphic = processGraphic;
         this.processGraphic.setMaximum(steps);
         this.processName = processName;
         this.logger = logger;
+        this.delay = delay;
     }
     
     @Override
@@ -32,7 +34,7 @@ public class ThreadWork implements Runnable{
         for (int i = 1; i <= totalSteps; i++) {
             try {
                 processGraphic.setValue(i);
-                Thread.sleep(180);
+                Thread.sleep(delay);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

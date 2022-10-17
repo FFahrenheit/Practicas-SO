@@ -23,7 +23,7 @@ public class Scheduler {
         for(ThreadWork job : jobsQueue){
             try {
                 new Thread((Runnable) job).start();
-                Thread.sleep(500);
+                Thread.sleep(137);
             } catch (InterruptedException ex) {
                 System.out.println(ex.getMessage());
             }
