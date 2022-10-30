@@ -5,8 +5,6 @@
  */
 package rr;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JProgressBar;
 import javax.swing.JTextArea;
 
