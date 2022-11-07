@@ -43,13 +43,17 @@ public class RRScheduler extends Thread implements IScheduler{
     
     public synchronized void run() {
         int count = 0;
+        int currentId = -1;
         while (jobsQueue.size() > 0) {
             if(count >= jobsQueue.size()){
                 count = 0;
             }
             
             ThreadWork nextRunner = jobsQueue.get(count);
-            Utils.log("RR: Proceso " + nextRunner.bcp.processNumber + " ha empezado a ejecutarse", logger);
+            if(nextRunner.bcp.processNumber != currentId){
+                Utils.log("RR: Proceso " + nextRunner.bcp.processNumber + " ha empezado a ejecutarse", logger);
+                currentId = nextRunner.bcp.processNumber;
+            }
             count++;
             
             synchronized (nextRunner) {

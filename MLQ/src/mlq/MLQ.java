@@ -165,23 +165,24 @@ public class MLQ extends javax.swing.JFrame {
         c.weighty = 1;
         JProgressBar pb = new JProgressBar();
         pb.setBounds(6, (38*i) + 6, 630, 32);
-        
-        int steps = Utils.getRandomNumber(60, 400);
-        BCP bcp = new BCP(scheduler, steps, i+1);
-        bcp.setStepSize(STEP_SIZE);
-        
         pb.setBackground(Utils.getRandomColor());
         pb.setStringPainted(true);
         
+        int steps = Utils.getRandomNumber(60, 300);
+        BCP bcp = new BCP(scheduler, steps, i+1);
+
         switch(scheduler){
             case "SRT":
+                bcp.setStepSize(50);
                 new ThreadWork(bcp, pb, SRTScheduler, this.jTextArea1);
                 this.SRTScheduler.raiseNewFlag();
                 break;
             case "RR":
+                bcp.setStepSize(50);
                 new ThreadWork(bcp, pb, RRScheduler, this.jTextArea1);
                 break;
             case "FCFS":
+                bcp.setStepSize(50);
                 new ThreadWork(bcp, pb, FCFSScheduler, this.jTextArea1);
                 break;
         }

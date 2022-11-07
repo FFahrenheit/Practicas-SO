@@ -30,8 +30,8 @@ public class BCP {
     public void setStepSize(int stepSize){
         this.STEP_SIZE = stepSize;                
         this.totalTime = this.totalSteps * this.STEP_SIZE;
-
     }
+   
     
     public void nextCycle(){
         this.remainingTime -= this.STEP_SIZE;

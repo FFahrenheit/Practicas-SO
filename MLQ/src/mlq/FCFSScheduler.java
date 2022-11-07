@@ -42,10 +42,14 @@ public class FCFSScheduler extends Thread implements IScheduler{
     }
 
     public synchronized void run() {
+        int currentId = -1;
         while (jobsQueue.size() > 0) {
             
             ThreadWork nextRunner = jobsQueue.get(0);
-            Utils.log("FCFS: Proceso " + nextRunner.bcp.processNumber + " ha empezado a ejecutarse", logger);
+            if(nextRunner.bcp.processNumber != currentId){
+                Utils.log("FCFS: Proceso " + nextRunner.bcp.processNumber + " ha empezado a ejecutarse", logger);
+                currentId = nextRunner.bcp.processNumber;
+            }
             
             synchronized (nextRunner) {
                 nextRunner.notify();
