@@ -38,3 +38,6 @@ replay_pid*
 /SRT/build/
 /SRT/dist/
 /SRTD/nbproject/private/
+/MLQ/nbproject/private/
+/MLQ/build/
+/MLQ/dist/
